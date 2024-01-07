@@ -1,0 +1,16 @@
+---
+interface Props {
+    centerContent?: boolean
+}
+
+const { centerContent } = Astro.props;
+---
+
+<article class:list={[
+    "bg-neutral-900 rounded-xl text-white px-6 md:px-8 py-3",
+    {
+        "flex flex-col justify-center items-center h-full w-full": centerContent
+    }
+]}>
+    <slot></slot>
+</article>
