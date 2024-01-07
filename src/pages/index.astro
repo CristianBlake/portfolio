@@ -2,6 +2,7 @@
 import '@fontsource-variable/onest';
 import Navbar from '../components/Navbar.vue';
 import Card from '../components/Card.astro';
+import NewTab from '../components/icons/NewTab.astro';
 ---
 
 <html lang="en">
@@ -29,13 +30,22 @@ import Card from '../components/Card.astro';
 				</Card>
 				<div class="flex gap-2">
 					<Card centerContent={true}>
-						<a class="font-bold" target="_blank" href="https://github.com/CristianBlake">GitHub</a>
+						<div class="flex justify-center items-center gap-2">
+							<a class="font-bold" target="_blank" href="https://github.com/CristianBlake">GitHub</a>
+							<NewTab />
+						</div>
 					</Card>
 					<Card centerContent={true}>
-						<a class="font-bold" target="_blank" href="https://www.linkedin.com/in/blakecristian/">LinkedIn</a>
+						<div class="flex justify-center items-center gap-2">
+							<a class="font-bold" target="_blank" href="https://www.linkedin.com/in/blakecristian/">LinkedIn</a>
+							<NewTab />
+						</div>
 					</Card>
 				</div>
 			</div>
+			<Card centerContent={true}>
+				<p class="text-xl lg:text-4xl font-bold">Projects</p>
+			</Card>
 		</main>
 	</body>
 </html>
