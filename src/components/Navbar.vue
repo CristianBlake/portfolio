@@ -15,10 +15,10 @@ const toggleShowLinks = () => {
 <template>
   <header>
     <nav class='relative'>
-      <section class="p-2">
-        <div class="bg-neutral-900 rounded-full flex items-center justify-between px-8 py-3">
+      <div class="p-2">
+        <div class="bg-neutral-900 rounded-lg flex items-center justify-between px-8 py-3">
           <a href='#'>
-            <h1 class='self-center text-xl font-semibold whitespace-nowrap text-white'>Cristian J.</h1>
+            <p class='self-center text-xl font-semibold whitespace-nowrap text-white'>CJ.</p>
           </a>
   
           <button data-collapse-toggle='navbar-default' type='button'
@@ -33,7 +33,7 @@ const toggleShowLinks = () => {
           </div>
         </div>
 
-      </section>
+      </div>
 
       <Transition>
         <div class="md:hidden absolute top-0 w-screen h-screen bg-neutral-900" v-show="showLinks">
@@ -42,9 +42,9 @@ const toggleShowLinks = () => {
               <Close />
             </button>
   
-            <Link title='Home' link='#' />
-            <Link title='Works' link='#' />
-            <Link title='Contact' link='#' />
+            <Link title='Home' link='#home' @click="toggleShowLinks" />
+            <Link title='Works' link='#works' @click="toggleShowLinks" />
+            <Link title='Contact' link='#contact' @click="toggleShowLinks" />
           </div>
         </div>
       </Transition>
