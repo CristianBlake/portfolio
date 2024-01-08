@@ -1,82 +1,33 @@
 ---
 import '@fontsource-variable/onest';
 import Navbar from '../components/Navbar.vue';
-import Card from '../components/Card.astro';
-import NewTab from '../components/icons/NewTab.astro';
+import Home from '../components/Home.astro';
+import Works from '../components/Works.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="bg-black container mx-auto">
-		<Navbar client:visible />
-		<main class="flex flex-col">
-			<section id="home" class="grid grid-cols-1 md:grid-cols-2 gap-2 px-2">
-				<Card>
-					<img class="rounded-full w-28 md:w-32 mb-4" src="/photo.jpg" alt="Cristian J. López">
-					<h1 class="text-2xl lg:text-5xl font-bold mb-1">Cristian J. López</h1>
-					<p class="text-normal lg:text-2xl opacity-85"><span class="font-bold">Fullstack Web Developer</span> focused on creating incredible experiences and amazing solutions</p>
-				</Card>
-				<div class="flex flex-col gap-2">
-					<Card centerContent={true}>
-						<h2 class="text-xl lg:text-4xl font-bold mb-4 text-center">Have a project in mind?</h2>
-						<div class="flex justify-center">
-							<a class="px-8 py-2 bg-sky-700 rounded-full" href="mailto:lopezmorataya2002@gmail.com">lopezmorataya2002@gmail.com</a>
-						</div>
-					</Card>
-					<div class="flex gap-2">
-						<Card centerContent={true}>
-							<div class="flex justify-center items-center gap-2">
-								<a class="font-bold" target="_blank" href="https://github.com/CristianBlake">GitHub</a>
-								<NewTab />
-							</div>
-						</Card>
-						<Card centerContent={true}>
-							<div class="flex justify-center items-center gap-2">
-								<a class="font-bold" target="_blank" href="https://www.linkedin.com/in/blakecristian/">LinkedIn</a>
-								<NewTab />
-							</div>
-						</Card>
-					</div>
-				</div>
-			</section>
-			<section id="works" class="p-2 flex flex-col gap-2">
-				<Card centerContent={true}>
-					<h2 class="text-xl lg:text-5xl font-bold my-4">Works</h2>
-				</Card>
-				<div class="flex flex-col gap-2">
-					<Card>
-						<div class="flex py-4 mb-4">
-							<div>
-								<h3 class="text-xl lg:text-4xl font-bold mr-8">MicroQuetzalNacional</h3>
-								<p class="text-lg lg:text-3xl opacity-50">tech ecommerce</p>
-							</div>
-							<div class="flex gap-2">
-								<p class="text-md lg:text-2xl font-bold opacity-75">Led a team in creating an online store to enhance client sales. Developed a user-friendly platform with a manageable product catalog.</p>
-								<a href="https://microquetzal.com/" target="_blank" class="rounded-full">
-									<NewTab size='20' />
-								</a>
-							</div>
-						</div>
-						<img src="/microquetzal.jpg" alt="microquetzalnacional" class="w-full rounded-xl">
-					</Card>
-				</div>
-			</section>
-		</main>
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class='bg-black container mx-auto'>
+    <Navbar client:visible />
+    <main class='flex flex-col'>
+      <Home />
+      <Works />
+    </main>
+  </body>
 </html>
 
 <style is:global>
-html {
-	scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-* {
-	font-family: 'Onest Variable', sans-serif;
-}
+  * {
+    font-family: 'Onest Variable', sans-serif;
+  }
 </style>
