@@ -7,9 +7,7 @@ import Link from '../components/Link.vue';
 
 const showLinks = ref(false);
 
-const toggleShowLinks = () => {
-  showLinks.value = !showLinks.value;
-}
+const toggleShowLinks = () => showLinks.value = !showLinks.value;
 </script>
 
 <template>
@@ -27,18 +25,18 @@ const toggleShowLinks = () => {
             <Bars />
           </button>
           <div class="hidden md:flex gap-8">
-            <Link title='Home' link='#' />
-            <Link title='Works' link='#' />
-            <Link title='Contact' link='#' />
+            <Link title='Home' link='#home' />
+            <Link title='Works' link='#works' />
+            <Link title='Contact' link='#contact' />
           </div>
         </div>
 
       </div>
 
       <Transition>
-        <div class="md:hidden absolute top-0 w-screen h-screen bg-neutral-900" v-show="showLinks">
+        <div class="absolute top-0 w-screen h-screen bg-neutral-900 z-10" v-if="showLinks">
           <div class="relative h-full w-full flex flex-col items-center justify-center gap-8">
-            <button class="absolute right-0 top-0 m-10 transition-all" @click="toggleShowLinks">
+            <button class="absolute right-0 top-0 m-10" @click="toggleShowLinks">
               <Close />
             </button>
   
@@ -51,3 +49,15 @@ const toggleShowLinks = () => {
     </nav>
   </header>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

@@ -2,11 +2,33 @@
 import Card from './Card.astro';
 import Copy from './Copy.astro';
 import NewTab from './NewTab.astro';
+
+interface Props {
+  setId?: boolean
+}
+
+const { setId } = Astro.props;
+
+let id: string = 'contact-social';
+
+if (setId) {
+  id = 'contact';
+}
 ---
 
-<div class='flex flex-col gap-2'>
+<div class:list={[
+  'flex flex-col gap-2',
+  {
+    "px-2": setId
+  }
+]}>
   <Card centerContent={true}>
-    <h2 class='text-xl lg:text-4xl font-bold mb-4 text-center'>
+    <h2 class:list={[
+      'text-xl lg:text-4xl font-bold mb-4 text-center',
+      {
+        'text-2xl lg:text-5xl my-4': setId
+      }
+    ]} id={id}>
       Have a project in mind?
     </h2>
     <div
@@ -18,7 +40,8 @@ import NewTab from './NewTab.astro';
       <Copy />
     </div>
   </Card>
-  <div class='flex gap-2'>
+  { !setId &&
+    <div class='flex gap-2'>
     <Card centerContent={true}>
       <div class='flex justify-center items-center gap-2'>
         <a
@@ -40,4 +63,5 @@ import NewTab from './NewTab.astro';
       </div>
     </Card>
   </div>
+  }
 </div>
